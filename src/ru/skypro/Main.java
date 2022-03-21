@@ -1,13 +1,13 @@
 package ru.skypro;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        task1();
-        task2();
-        task3();
-        task4();
+        task6();
+
     }
 
     public static void task1() {
@@ -25,8 +25,8 @@ public class Main {
     public static void task2() {
 
         int[] arr = generateRandomArray();
-        int minExp = 150_000;
-        int maxExp = 150_000;
+        int minExp = arr[0];
+        int maxExp = arr[0];
         for (int i = 0; i < arr.length; i++) {
             {
                 if (arr[i] < minExp) {
@@ -47,11 +47,9 @@ public class Main {
         double sum = 0;
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
-            if (i == arr.length - 1) {
-                sum = sum / 30;
-                System.out.println("Средняя сумма трат за месяц составила " + sum + " рублей");
-            }
         }
+        sum = (double) sum / 30;
+        System.out.println("Средняя сумма трат за месяц составила " + sum + " рублей");
     }
 
     public static void task4() {
@@ -60,6 +58,35 @@ public class Main {
             System.out.print(reverseFullName[i]);
         }
     }
+
+    public static void task5() {
+        int[][] matrix = new int[3][3];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if ((i + j) % 2 == 0) {
+                    matrix[i][j] = 1;
+                } else {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void task6() {
+        int[] arr = new int[]{5,4,3,2,1};
+        System.out.println(Arrays.toString(arr));
+        int arr1[] = new int[5];
+        for (int j = arr.length; j == 0; j--) {
+            arr1 = j;
+        }
+    }
+
 
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
@@ -70,3 +97,7 @@ public class Main {
         return arr;
     }
 }
+
+
+
+
