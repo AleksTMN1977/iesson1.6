@@ -6,8 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        task6();
-
+        task8();
     }
 
     public static void task1() {
@@ -27,7 +26,8 @@ public class Main {
         int[] arr = generateRandomArray();
         int minExp = arr[0];
         int maxExp = arr[0];
-        for (int i = 0; i < arr.length; i++) {
+        int i = 0;
+        while (i < arr.length) {
             {
                 if (arr[i] < minExp) {
                     minExp = arr[i];
@@ -36,6 +36,7 @@ public class Main {
             if (arr[i] > maxExp) {
                 maxExp = arr[i];
             }
+            i++;
         }
         System.out.println("Максимальная сумма трат за день составила " + maxExp + " рублей.");
         System.out.println("Минимальная сумма трат за день составила " + minExp + " рублей.");
@@ -45,10 +46,10 @@ public class Main {
 
         int[] arr = generateRandomArray();
         double sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int j : arr) {
+            sum += j;
         }
-        sum = (double) sum / 30;
+        sum = sum / 30;
         System.out.println("Средняя сумма трат за месяц составила " + sum + " рублей");
     }
 
@@ -79,12 +80,26 @@ public class Main {
     }
 
     public static void task6() {
-        int[] arr = new int[]{5,4,3,2,1};
+        int[] arr = new int[]{5, 4, 3, 2, 1};
         System.out.println(Arrays.toString(arr));
-        int arr1[] = new int[5];
-        for (int j = arr.length; j == 0; j--) {
-            arr1 = j;
+        int[] reverseArray = new int[]{5, 4, 3, 2, 1};
+        for (int i = reverseArray.length - 1; i >= 0; i--) {
+            System.out.print(reverseArray[i] + " ");
         }
+    }
+
+    public static void task7() {
+        int[] arr = new int[]{5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(arr));
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void task8() {
+        int[] arr = new int[]{-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+
+
     }
 
 
